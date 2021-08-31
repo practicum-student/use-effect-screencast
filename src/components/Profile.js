@@ -1,18 +1,5 @@
 import React from 'react';
 
-// function Profile(props) {
-
-//   const [name, setName] = React.useState('');
-//   const [email, setEmail] = React.useState('');
-  
-//   return (
-//     <div>
-//       <h2>{`Name: ${name}`}</h2>
-//       <p>{`Email: ${email}`}</p>
-//     </div>
-//   );
-// }
-
 class Profile extends React.Component {
   constructor(props) {
     super(props);
@@ -55,5 +42,29 @@ class Profile extends React.Component {
     );
   }
 }
+
+// Refactored Profile Component
+//
+// function Profile(props) {
+
+//   const [name, setName] = React.useState('');
+//   const [email, setEmail] = React.useState('');
+ 
+//   React.useEffect(() => {
+//     fetch(`https://jsonplaceholder.typicode.com/users/${props.id}`)
+//       .then((res) => res.json())
+//       .then((data) => {
+//         setName(data.name);
+//         setEmail(data.email);
+//       })
+//   });
+
+//   return (
+//     <div>
+//       <h2>{`Name: ${name}`}</h2>
+//       <p>{`Email: ${email}`}</p>
+//     </div>
+//   );
+// }
 
 export default Profile;
