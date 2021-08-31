@@ -19,8 +19,8 @@ class Profile extends React.Component {
     this.state = { name: '', email: '' };
   }
 
-  componentDidMount() {
-    fetch(`https://jsonplaceholder.typicode.com/users/${this.props.id}`)
+  fetchUser = (id) => {
+    fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
       .then((res) => res.json())
       .then((data) => {
         this.setState({
@@ -32,18 +32,13 @@ class Profile extends React.Component {
       .catch((err) => console.log(err));
   }
 
+  componentDidMount() {
+    this.fetchUser(this.props.id);
+  }
+
   componentDidUpdate(prevProps) {
     if (prevProps.id !== this.props.id) {
-      fetch(`https://jsonplaceholder.typicode.com/users/${this.props.id}`)
-        .then((res) => res.json())
-        .then((data) => {
-          this.setState({
-            ...this.state,
-            name: data.name,
-            email: data.email,
-          })
-        })
-        .catch((err) => console.log(err));
+      this.fetchUser(this.props.id);
     }
   }
 
