@@ -5,7 +5,7 @@ import Profile from './Profile';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { id: 1 };
+    this.state = { id: '' };
   }
 
   handleChange = (e) => {
@@ -23,12 +23,13 @@ class App extends React.Component {
 
   render() {
     return (
-      <>
+      <div className="app">
         <form onSubmit={this.handleChangeUser}>
+          <label>Enter user id: </label>
           <input value={this.state.id} onChange={this.handleChange} />
         </form>
         <Profile id={this.state.id} />
-      </>
+      </div>
     );
   }
 }
