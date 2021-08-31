@@ -36,8 +36,8 @@ class Profile extends React.Component {
   render() {
     return (
       <div>
-        <h2>{`Name: ${this.state.name}`}</h2>
-        <p>{`Email: ${this.state.email}`}</p>
+        <h2>{`Name: ${this.state.name || ''}`}</h2>
+        <p>{`Email: ${this.state.email || ''}`}</p>
       </div>
     );
   }
