@@ -14,17 +14,10 @@ class App extends React.Component {
     })
   }
 
-  handleChangeUser = (e) => {
-    e.preventDefault();
-    this.setState({
-      id: this.state.id
-    });
-  }
-
   render() {
     return (
       <div className="app">
-        <form onSubmit={this.handleChangeUser}>
+        <form>
           <label>Enter user id: </label>
           <input value={this.state.id} onChange={this.handleChange} />
         </form>
