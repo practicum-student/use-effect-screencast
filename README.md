@@ -1,10 +1,9 @@
-# Use Effect Demo Code
-
-Initial code for the `useEffect` screencast. 
+# Code for The useEffect Hook Screencast
 
 ## Installation
-
-1. Unzip the archive
-2. `cd use-effect-demo-initial-code`
-3. `npm i`
-4. `npm run start`
+1. `git clone https://github.com/practicum-student/use-effect-demo.git`
+2. `cd use-effect-demo`
+3. `git fetch origin initial-code`
+4. `git checkout initial-code`
+5. `npm i`
+6. `npm run start`
