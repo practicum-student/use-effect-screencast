@@ -5,7 +5,7 @@ import Profile from './Profile';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { id: '', isProfileVisible: false };
+    this.state = { id: '', isProfileRendered: false };
   }
 
   handleChange = (e) => {
@@ -18,7 +18,7 @@ class App extends React.Component {
   showProfile = () => {
     this.setState({
       ...this.state,
-      isProfileVisible: !this.state.isProfileVisible,
+      isProfileRendered: !this.state.isProfileRendered,
     })
   }
 
@@ -26,10 +26,10 @@ class App extends React.Component {
     return (
       <div className="app">
         <form>
-          <label>Enter user id: </label>
+          <label>Enter id (between 1 and 10): </label>
           <input value={this.state.id} onChange={this.handleChange} />
         </form>
-        {this.state.isProfileVisible && (<Profile id={this.state.id} />)}
+        {this.state.isProfileRendered && (<Profile id={this.state.id} />)}
         <button onClick={this.showProfile}>Show/hide profile</button>
       </div>
     );
